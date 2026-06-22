@@ -1,4 +1,4 @@
-package com.kozao.bibliotheque.utils;
+package co.kozao.bibliotheque.utils;
 
 public class DatabaseConnection {
 
