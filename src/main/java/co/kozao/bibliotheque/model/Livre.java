@@ -2,8 +2,7 @@ package co.kozao.bibliotheque.model;
 
 public class Livre {
 
-<<<<<<< HEAD
-=======
+
 	private int id;
 	private int categorieId;
 	private String title;
@@ -63,5 +62,5 @@ public class Livre {
 		this.available = available;
 	}
 
->>>>>>> 476208f25e8c2abd040b0a61c85789db49f94a32
+
 }
