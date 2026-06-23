@@ -1,0 +1,83 @@
+/* assets/css/dark-theme.css */
+body.dark-theme {
+    background-color: #1a1a2e;
+    color: #eee;
+}
+
+body.dark-theme .navbar {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%) !important;
+}
+
+body.dark-theme .card,
+body.dark-theme .modal-content,
+body.dark-theme .list-group-item {
+    background-color: #16213e;
+    border-color: #0f3460;
+    color: #eee;
+}
+
+body.dark-theme .card-header,
+body.dark-theme .modal-header {
+    background-color: #0f3460;
+    border-bottom-color: #1a1a2e;
+}
+
+body.dark-theme .btn-outline-primary {
+    color: #eee;
+    border-color: #0f3460;
+}
+
+body.dark-theme .btn-outline-primary:hover {
+    background-color: #0f3460;
+}
+
+body.dark-theme .table {
+    color: #eee;
+}
+
+body.dark-theme .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(15, 52, 96, 0.3);
+}
+
+body.dark-theme .form-control,
+body.dark-theme .form-select {
+    background-color: #0f3460;
+    border-color: #1a1a2e;
+    color: #eee;
+}
+
+body.dark-theme .form-control:focus {
+    background-color: #16213e;
+    color: #eee;
+}
+
+body.dark-theme .alert-info {
+    background-color: #0f3460;
+    border-color: #1a1a2e;
+    color: #eee;
+}
+
+body.dark-theme .footer {
+    background-color: #16213e !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
