@@ -6,27 +6,24 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-	private static final String URL = "jdbc:mysql://localhost:3306/bibli_db";
-	private static final String USER = "root";
-	private static final String PASSWORD = "";
+    private static final String URL = "jdbc:mysql://localhost:3306/bibli_db";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
 
-	private DatabaseConnection() {
-	}
+    private DatabaseConnection() {
+    }
 
-	private static Connection connection = null ;
+    private static Connection connection = null;
 
-	public static Connection getconnection() throws SQLException {
-		if (connection == null || connection.isClosed()) {
-			try {
-				Class.forName("");
-				connection = DriverManager.getConnection(URL, USER, PASSWORD);
-
-				catch (ClassNotFoundException e) {
-				    throw new SQLException("Driver MySQL introuvable", e);
-				}
-		}
-		return connection;
-
-	
-
+    public static Connection getConnection() throws SQLException {
+        if (connection == null || connection.isClosed()) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            } catch (ClassNotFoundException e) {
+                throw new SQLException("Driver MySQL introuvable", e);
+            }
+        }
+        return connection;
+    }
 }

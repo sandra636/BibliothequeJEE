@@ -24,10 +24,10 @@ public class LivreDAO {
             while (rs.next()) {
                 Livre livre = new Livre();
                 livre.setId(rs.getInt("id"));
-                livre.setTitre(rs.getString("title"));
-                livre.setAuteur(rs.getString("author"));
+                livre.setTitle(rs.getString("title"));
+                livre.setAuthor(rs.getString("author"));
                 livre.setIsbn(rs.getString("isbn"));
-                livre.setDisponible(rs.getBoolean("available"));
+                livre.setAvailable(rs.getBoolean("available"));
                 livres.add(livre);
             }
 
@@ -42,7 +42,7 @@ public class LivreDAO {
         String sql = "UPDATE book SET available = ? WHERE id = ?";
 
         try {
-            Connection conn = DatabaseConnection.getconnection();
+            Connection conn = DatabaseConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setBoolean(1, disponible);
             ps.setInt(2, livreId);

@@ -15,7 +15,7 @@ public class BibliothecaireDAO {
         String sql = "SELECT * FROM Librarian WHERE login = ? AND password = ?";
 
         try {
-            Connection conn = DatabaseConnection.getconnection();
+            Connection conn = DatabaseConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, login);
             ps.setString(2, password);
@@ -25,7 +25,7 @@ public class BibliothecaireDAO {
                 bibliothecaire = new Bibliothecaire();
                 bibliothecaire.setId(rs.getInt("id"));
                 bibliothecaire.setLogin(rs.getString("login"));
-                bibliothecaire.setMotDePasse(rs.getString("password"));
+                bibliothecaire.setPassword(rs.getString("password"));
             }
 
         } catch (SQLException e) {

@@ -6,7 +6,7 @@ public class Livre {
 	private String title;
 	private String author;
 	private String isbn;
-	private String available;
+	private boolean available;
 	
 	public int getId() {
 		return this.id;
@@ -38,10 +38,11 @@ public class Livre {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	public String getAvailable() {
+	public boolean getAvailable() {
 		return this.available;
 	}
-	public void setAvailable(String available) {
-		this.available = available;
+	public void setAvailable(boolean b) {
+		this.available = b;
 	}
+
 }
