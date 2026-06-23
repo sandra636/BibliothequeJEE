@@ -45,8 +45,72 @@ public class Livre {
 		this.available = available;
 	}
 
+<<<<<<< HEAD
 	public Livre(){
 		
 	}
 	
+=======
+
+	private int id;
+	private int categorieId;
+	private String title;
+	private String author;
+	private String isbn;
+	private String available;
+
+	public Livre() {
+		
+	}
+	
+	public int getId() {
+		return this.id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getCategorieId() {
+		return this.categorieId;
+	}
+
+	public void setCategorieId(int categorieId) {
+		this.categorieId = categorieId;
+	}
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return this.author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getIsbn() {
+		return this.isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public String getAvailable() {
+		return this.available;
+	}
+
+	public void setAvailable(String available) {
+		this.available = available;
+	}
+
+
+>>>>>>> dc7903e63cfaff34b009272bc8ae22a4518a6445
 }
