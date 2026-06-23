@@ -45,19 +45,16 @@ public class Livre {
 		this.available = available;
 	}
 
-<<<<<<< HEAD
 	public Livre(){
 		
 	}
 	
-=======
-
 	private int id;
 	private int categorieId;
 	private String title;
 	private String author;
 	private String isbn;
-	private String available;
+	private boolean available;
 
 	public Livre() {
 		
@@ -103,14 +100,12 @@ public class Livre {
 		this.isbn = isbn;
 	}
 
-	public String getAvailable() {
+	public boolean getAvailable() {
 		return this.available;
 	}
 
-	public void setAvailable(String available) {
+	public void setAvailable(boolean available) {
 		this.available = available;
 	}
 
-
->>>>>>> dc7903e63cfaff34b009272bc8ae22a4518a6445
 }
