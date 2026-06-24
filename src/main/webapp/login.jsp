@@ -17,13 +17,13 @@
                 </div>
                 <div class="card-body">
 
-                    <form method="POST" action="LoginServlet.java">
+                    <form method="POST" action="${pageContext.request.contextPath}/login">
                     
                         <div class="mb-3">
                             <label class="form-label">Login</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                <input type="text" name="text" class="form-control" required>
+                                <input type="text" name="login" class="form-control" required>
                             </div>
                         </div>
                         

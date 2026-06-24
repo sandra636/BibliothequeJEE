@@ -17,7 +17,7 @@ public class LivreDAO {
         String sql = "SELECT * FROM book";
 
         try {
-            Connection conn = DatabaseConnection.getconnection();
+            Connection conn = DatabaseConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
