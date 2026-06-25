@@ -27,6 +27,7 @@ public class LivreDAO {
                 livre.setTitle(rs.getString("title"));
                 livre.setAuthor(rs.getString("author"));
                 livre.setIsbn(rs.getString("isbn"));
+                livre.setCategorieId(rs.getInt("categorieId"));
                 livre.setAvailable(rs.getBoolean("available"));
                 livres.add(livre);
             }

@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Enregistrer un emprunt</title>
+    <title>Retour de livre</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; }
@@ -13,7 +13,7 @@
         h2 { font-size: 24px; color: #2c3e50; margin-bottom: 24px; border-left: 4px solid #5B5BD6; padding-left: 12px; }
         .form-group { margin-bottom: 16px; }
         label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #555; }
-        input[type="text"], input[type="number"], input[type="date"] {
+        input[type="number"], input[type="date"] {
             width: 100%; padding: 10px 14px; border: 1px solid #ddd;
             border-radius: 6px; font-size: 14px; background: white;
         }
@@ -38,10 +38,15 @@
 </div>
 
 <div class="container">
-    <h2>Enregistrer un emprunt</h2>
+    <h2>Enregistrer un retour</h2>
 
     <div class="card">
-        <form action="${pageContext.request.contextPath}/emprunt" method="post">
+        <form action="${pageContext.request.contextPath}/retour" method="post">
+
+            <div class="form-group">
+                <label>ID de l'emprunt :</label>
+                <input type="number" name="empruntId" required />
+            </div>
 
             <div class="form-group">
                 <label>ID du livre :</label>
@@ -49,22 +54,12 @@
             </div>
 
             <div class="form-group">
-                <label>ID de la catégorie :</label>
-                <input type="number" name="categorieId" required />
-            </div>
-
-            <div class="form-group">
-                <label>Emprunteur :</label>
-                <input type="text" name="emprunteur" required />
-            </div>
-
-            <div class="form-group">
-                <label>Date d'emprunt :</label>
-                <input type="date" name="dateEmprunt" required />
+                <label>Date de retour :</label>
+                <input type="date" name="dateRetour" required />
             </div>
 
             <div style="margin-top: 24px;">
-                <button type="submit" class="btn-submit">Enregistrer</button>
+                <button type="submit" class="btn-submit">Enregistrer le retour</button>
                 <a href="${pageContext.request.contextPath}/livres" class="btn-cancel">Annuler</a>
             </div>
 

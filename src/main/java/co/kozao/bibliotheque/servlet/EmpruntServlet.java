@@ -20,7 +20,6 @@ public class EmpruntServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Vérification session
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("bibliothecaire") == null) {
             response.sendRedirect(request.getContextPath() + "/login");
@@ -32,7 +31,6 @@ public class EmpruntServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Vérification session
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("bibliothecaire") == null) {
             response.sendRedirect(request.getContextPath() + "/login");
@@ -46,12 +44,12 @@ public class EmpruntServlet extends HttpServlet {
 
         Emprunt emprunt = new Emprunt();
         emprunt.setLivreId(livreId);
-        emprunt.setId(categorieId);
+        emprunt.setCategorieId(categorieId);
         emprunt.setBorrower(emprunteur);
         emprunt.setLoanDate(dateEmprunt);
+        emprunt.setTitle("");
 
         empruntDAO.enregistrerEmprunt(emprunt);
-
         response.sendRedirect(request.getContextPath() + "/livres");
     }
 }

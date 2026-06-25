@@ -1,7 +1,6 @@
 package co.kozao.bibliotheque.servlet;
 
 import co.kozao.bibliotheque.dao.EmpruntDAO;
-import co.kozao.bibliotheque.dao.LivreDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,13 +15,23 @@ import java.sql.Date;
 public class RetourServlet extends HttpServlet {
 
     private EmpruntDAO empruntDAO = new EmpruntDAO();
-    private LivreDAO livreDAO = new LivreDAO();
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("bibliothecaire") == null) {
+            response.sendRedirect(request.getContextPath() + "/login");
+            return;
+        }
+        request.getRequestDispatcher("/retour.jsp").forward(request, response);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Vérification session
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("bibliothecaire") == null) {
             response.sendRedirect(request.getContextPath() + "/login");
@@ -33,8 +42,7 @@ public class RetourServlet extends HttpServlet {
         int livreId = Integer.parseInt(request.getParameter("livreId"));
         Date dateRetour = Date.valueOf(request.getParameter("dateRetour"));
 
-        empruntDAO.enregistrerRetour(empruntId, dateRetour);
-        livreDAO.changerDisponibilite(livreId, true);
+        empruntDAO.enregistrerRetour(empruntId, livreId, dateRetour);
 
         response.sendRedirect(request.getContextPath() + "/livres");
     }
