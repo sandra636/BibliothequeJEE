@@ -17,7 +17,7 @@ public class LivreDAO {
         String sql = "SELECT * FROM book";
 
         try {
-            Connection conn = DatabaseConnection.getconnection();
+            Connection conn = DatabaseConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
@@ -27,6 +27,7 @@ public class LivreDAO {
                 livre.setTitle(rs.getString("title"));
                 livre.setAuthor(rs.getString("author"));
                 livre.setIsbn(rs.getString("isbn"));
+                livre.setCategorieId(rs.getInt("categorieId"));
                 livre.setAvailable(rs.getBoolean("available"));
                 livres.add(livre);
             }

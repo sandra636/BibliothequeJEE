@@ -41,8 +41,8 @@ public class Livre {
 	public boolean getAvailable() {
 		return this.available;
 	}
-	public void setAvailable(boolean b) {
-		this.available = b;
+	public void setAvailable(boolean available) {
+	    this.available = available;
 	}
-
+	
 }

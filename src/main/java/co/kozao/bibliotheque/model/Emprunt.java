@@ -1,6 +1,6 @@
 package co.kozao.bibliotheque.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Emprunt {
 
@@ -10,15 +10,9 @@ public class Emprunt {
     private Date loanDate;
     private String borrower;
     private Date returnloanDate;
+    private int categorieId;
 
     public Emprunt() {}
-
-    public Emprunt(int livreId, String borrower, Date loanDate) {
-        this.livreId = livreId;
-        this.borrower = borrower;
-        this.loanDate = loanDate;
-        this.returnloanDate = null;
-    }
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -38,4 +32,6 @@ public class Emprunt {
     public Date getReturnloanDate() { return returnloanDate; }
     public void setReturnloanDate(Date returnloanDate) { this.returnloanDate = returnloanDate; }
 
+    public int getCategorieId() { return categorieId; }
+    public void setCategorieId(int categorieId) { this.categorieId = categorieId; }
 }
